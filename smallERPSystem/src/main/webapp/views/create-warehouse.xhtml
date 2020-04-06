@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html >
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/user-navbar.xhtml"/>
+        <main>
+            <hr class="my-3"/>
+            <div class="text-center mb-4">
+                <h1>Create Warehouse</h1>
+                <div class="main-agileinfo">
+                    <div class="agileits-top">
+
+                        <hr class="my-3"/>
+                        <h:form class="mx-auto w-15" method="post">
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="name" class="h3 mb-2">Name</label>
+                                </div>
+                                <h:inputText class="form-control" id="name" name="name"
+                                             value="#{warehouseCreateBean.warehouse.name}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="address" class="h3 mb-2">Address</label>
+                                </div>
+                                <h:inputText class="form-control" id="address" name="address"
+                                             value="#{warehouseCreateBean.warehouse.address}"/>
+                            </div>
+
+
+                            <div class="button-holder d-flex justify-content-center">
+                                <h:commandButton type="submit" class="btn btn-info text-white" value="Register"
+                                                 action="#{warehouseCreateBean.createWarehouse}"/>
+                            </div>
+                        </h:form>
+                        <hr class="my-3"/>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+</html>

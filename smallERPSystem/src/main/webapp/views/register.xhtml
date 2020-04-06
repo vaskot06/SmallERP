@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<ui:include src="templates/head.xhtml"/>
+<!-- Custom Theme files -->
+<!--<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />-->
+<h:outputStylesheet library="css" name="style.css"/>
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet"/>
+<!-- //web font -->
+<h:body>
+    <div class="container-fluid">
+        <ui:include src="templates/guest-navbar.xhtml"/>
+        <main>
+            <div class="main-w3layouts wrapper">
+                <h1>Register</h1>
+                <div class="main-agileinfo">
+                    <div class="agileits-top">
+
+                        <h:form class="mx-auto w-15" method="post">
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="firstName" class="h3 mb-2">First Name</label>
+                                </div>
+                                <h:inputText class="form-control" id="firstName" name="firstName"
+                                             value="#{registerBean.user.firstName}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="lastName" class="h3 mb-2">Last Name</label>
+                                </div>
+                                <h:inputText class="form-control" id="lastName" name="lastName"
+                                             value="#{registerBean.user.lastName}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="phoneNumber" class="h3 mb-2">Phone Number</label>
+                                </div>
+                                <h:inputText type="number" class="form-control" id="phoneNumber" name="phoneNumber"
+                                             value="#{registerBean.user.phoneNumber}"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="email" class="h3 mb-2">Email</label>
+                                </div>
+                                <h:inputText type="email" class="form-control" id="email" name="email"
+                                             value="#{registerBean.user.email}"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="password" class="h3 mb-2">Password</label>
+                                </div>
+                                <h:inputSecret type="password" class="form-control" id="password" name="password"
+                                               value="#{registerBean.user.password}"/>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="confirmPassword" class="h3 mb-2">Confirm Password</label>
+                                </div>
+                                <h:inputSecret type="password" class="form-control" id="confirmPassword"
+                                               name="confirmPassword" value="#{registerBean.user.confirmPassword}"/>
+
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="name" class="h3 mb-2">Company Name</label>
+                                </div>
+                                <h:inputText class="form-control" id="name" name="name"
+                                             value="#{registerBean.company.name}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="eik" class="h3 mb-2">EIK</label>
+                                </div>
+                                <h:inputText class="form-control" id="eik" name="eik"
+                                             value="#{registerBean.company.eik}"/>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="registeredVAT" class="h3 mb-2">RegisteredVAT</label>
+                                </div>
+                                <h:selectOneMenu class="registeredVAT" id="registeredVAT" name="registeredVAT"
+                                                 value="#{registerBean.company.registeredVAT}">
+                                    <f:selectItem itemValue="Yes" itemLabel="Yes"/>
+                                    <f:selectItem itemValue="No" itemLabel="No"/>
+                                </h:selectOneMenu>
+                            </div>
+                            <div class="form-group">
+                                <div class="label-holder d-flex justify-content-center">
+                                    <label for="country" class="h3 mb-2">Country</label>
+                                </div>
+                                <h:inputText class="form-control" id="country" name="country"
+                                             value="#{registerBean.company.country}"/>
+
+                            </div>
+
+                            <div class="button-holder d-flex justify-content-center">
+                                <h:commandButton type="submit" class="btn btn-info text-white" value="Register"
+                                                 action="#{registerBean.registerUser}"/>
+                            </div>
+                        </h:form>
+
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        <ui:include src="templates/footer.xhtml"/>
+    </div>
+</h:body>
+</html>
